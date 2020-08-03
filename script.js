@@ -1,7 +1,6 @@
 const firstNumber = +prompt('Введите первоё число');
 
-if (Number.isFinite(firstNumber)) {
-} else {
+if (!Number.isFinite(firstNumber)) {
     alert('Ошибка, вы ввели символ. \nВведите число.');
 }
 
@@ -9,8 +8,7 @@ const arithmeticOperations = prompt('Введите арифметическое
 
 const secondNumber = +prompt('Введите второе число');
 
-if (Number.isFinite(secondNumber)) {
-} else {
+if (!Number.isFinite(secondNumber)) {
     alert('Ошибка, вы ввели символ. \nВведите число.');
 }
 
