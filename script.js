@@ -1,6 +1,6 @@
 const firstNumber = +prompt('Введите первоё число');
 
-if (firstNumber.isInteger) {
+if (Number.isFinite(firstNumber)) {
 } else {
     alert('Ошибка, вы ввели символ. \nВведите число.');
 }
@@ -9,25 +9,33 @@ const arithmeticOperations = prompt('Введите арифметическое
 
 const secondNumber = +prompt('Введите второе число');
 
-if (secondNumber.isInteger) {
+if (Number.isFinite(secondNumber)) {
 } else {
     alert('Ошибка, вы ввели символ. \nВведите число.');
 }
 
-let answer = Number;
+let answer;
+switch (arithmeticOperations) {
+    case '+' :
+        answer = firstNumber + secondNumber;
+        alert('Ответ: ' + (answer));
+        break;
 
-if (arithmeticOperations === '+') {
-    answer = firstNumber + secondNumber;
-    alert('Ответ: ' + (answer));
-} else if (arithmeticOperations === '-') {
-    answer = firstNumber - secondNumber;
-    alert('Ответ: ' + (answer));
-} else if (arithmeticOperations === '/') {
-    answer = firstNumber / secondNumber;
-    alert('Ответ: ' + (answer));
-} else if (arithmeticOperations === '*') {
-    answer = firstNumber * secondNumber;
-    alert('Ответ: ' + (answer));
-} else {
-    alert('Ошибка! \nНеверное арифметическое действие.')
+    case '-':
+        answer = firstNumber - secondNumber;
+        alert('Ответ: ' + (answer));
+        break;
+
+    case '*':
+        answer = firstNumber / secondNumber;
+        alert('Ответ: ' + (answer));
+        break;
+
+    case '/':
+        answer = firstNumber * secondNumber;
+        alert('Ответ: ' + (answer));
+        break;
+    default:
+        alert('Ошибка! \nНеверное арифметическое действие.')
+
 }
