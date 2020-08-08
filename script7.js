@@ -47,7 +47,7 @@ const arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 function reduce(arr3, initialValue) {
     for (let i = 0; i < arr3.length; i++) {
         initialValue = arr3[i] + initialValue;
-        // func(initialValue, i);
+
 
     }
     return initialValue;
@@ -57,11 +57,9 @@ const sum = reduce(arr3, 0)
 console.log(sum, ' Сумма чисел массива ', arr3);
 
 
-
-
-
+//TODO: доделать адекватный вывод
 // Закоментировал так как не работал вывод через return.
-
+// Находилось в цикле for{  func(initialValue, i);  }
 // const sum = reduce(arr3, 0, (value, index) => {
 //     for (let j = 0; j <= index; j++) {
 //         value = arr3[j] + value;
