@@ -55,6 +55,11 @@ function reduce(arr3, initialValue) {
 
 const sum = reduce(arr3, 0)
 console.log(sum, ' Сумма чисел массива ', arr3);
+
+
+
+
+
 // Закоментировал так как не работал вывод через return.
 
 // const sum = reduce(arr3, 0, (value, index) => {
