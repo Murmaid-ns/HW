@@ -15,7 +15,7 @@ console.log('Новый массив числел увеличенных на 1'
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-const arr2 = [1, 2, null, 3, 4, null, 5, 6, null, 7, 8, 9, null, null, 10, 11, null, 13];
+const arr2 = [1, 2, null, 3, 4, false, 5, 6, null, 7, 8, 9, null, null, 10, 11, null, 13];
 
 function filter(arr2, funcFilter) {
     const newFilteredArr = [];
@@ -29,14 +29,12 @@ function filter(arr2, funcFilter) {
         }
     }
     return newFilteredArr;
+
 }
 
-const newFilteredArr = filter(arr2, (el) => {
-    if (el !== null) {
-        return el
-    }
-});
 
+const newFilteredArr = filter(arr2, (el) => el !== null);
+console.log(arr2);
 console.log('изначальный массив', arr2);
 console.log('Новый массив числел без null', newFilteredArr);
 
