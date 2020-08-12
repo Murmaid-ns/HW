@@ -54,9 +54,9 @@ console.log('1.Самый старший пользователь', maxAge);
 
 const sortedUsers = users.sort((prevUser, curUser) => {
     if (prevUser.name === curUser.name) {
-        return (prevUser.name > curUser.name) - (prevUser.name < curUser.name)
+        return prevUser.name.localeCompare(curUser);
     } else {
-       return (prevUser.age < curUser.age) - (prevUser.age > curUser.age);
+        return (prevUser.age < curUser.age) - (prevUser.age > curUser.age);
     }
 });
 console.log('2. Сортировка по имени и возрасту', sortedUsers);
