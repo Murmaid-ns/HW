@@ -43,6 +43,8 @@ const users = [
     {name: 'Alex', age: 27,},
     {name: 'John', age: 18,},
 ];
+
+users.push({name: 'Boris', age: 30});
 console.log('Пользователи', users);
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const maxAge = users.reduce((prevAge, curAge) => {
@@ -50,14 +52,11 @@ const maxAge = users.reduce((prevAge, curAge) => {
 }, {age: null});
 console.log('1.Самый старший пользователь', maxAge);
 
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const sortedUsers = users.sort((prevUser, curUser) => {
-    if (prevUser.name === curUser.name) {
-        return prevUser.name.localeCompare(curUser);
-    } else {
-        return (prevUser.age < curUser.age) - (prevUser.age > curUser.age);
-    }
+    return prevUser.name.localeCompare(curUser.name) || (prevUser.age < curUser.age) - (prevUser.age > curUser.age);
 });
 console.log('2. Сортировка по имени и возрасту', sortedUsers);
 
@@ -74,3 +73,4 @@ console.log('3. Средней возвраст пользователей', mea
 
 const adultUsers = users.filter(curAge => curAge.age >= 18);
 console.log('4. Пользователи старше 18 лет', adultUsers);
+console.log(users)
