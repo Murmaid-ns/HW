@@ -43,13 +43,17 @@ const maxAge = users.reduce((prevAge, curAge) => {
 console.log('1.Самый старший пользователь', maxAge);
 
 
-
-let sortedUsers = users.sort((curAge,prevAge,prevName, curName) => {
-    return prevName.name > curName.name ? 1 : -1;
+const sortedUsers = users.sort((prevUser, curUser) => {
+    return (prevUser.name > curUser.name) - (prevUser.name < curUser.name) || (prevUser.age < curUser.age) - (prevUser.age > curUser.age);
 });
-let usersName = users;
-console.log('123',usersName)
-//  sortedUsers = users.sort((curAge, prevAge) => {
-//     return prevAge.age > curAge.age ? 1 : -1;
-// })
-console.log(sortedUsers);
+console.log('2. Сортировка по имени и возрасту', sortedUsers);
+
+
+let meanArithmeticAge = users.reduce((sum, curAge) => {
+    return sum + curAge.age;
+}, 0);
+meanArithmeticAge = meanArithmeticAge / users.length
+console.log('3. Средней возвраст пользователей', meanArithmeticAge);
+
+const adultUsers = users.filter(curAge => curAge.age >= 18);
+console.log('4. Пользователи старше 18 лет',adultUsers);
