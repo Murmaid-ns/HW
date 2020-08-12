@@ -25,7 +25,7 @@ console.log('3.Массив из элементов деленных на 2', di
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const sumOfNegativeNumber = arr.reduce((sum, element) => {
-    if (element < 0)
+    if (element % 2)
         sum = sum + element
     return sum
 }, 0);
