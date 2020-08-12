@@ -15,7 +15,7 @@
 // }
 //
 // const filteredArr = filter(arr, (el, index) => el !== null && el !== undefined && el !== false);
-// console.log('reduce ',filteredArr);
+// console.log('filter',filteredArr);
 
 
 

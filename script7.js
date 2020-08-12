@@ -20,12 +20,10 @@ const arr2 = [1, 2, null, 3, 4, false, 5, 6, null, 7, 8, 9, null, null, 10, 11, 
 function filter(arr2, funcFilter) {
     const newFilteredArr = [];
     for (let i = 0; i < arr2.length; i++) {
-        if (arr2[i] != null) {
-            if (arr2[i] === false) {
-                delete arr2[i];
-            } else {
-                newFilteredArr.push(funcFilter(arr2[i], i))
-            }
+        const isTrueEl = funcFilter(arr2[i], i)
+        if(isTrueEl){
+            newFilteredArr.push(arr[i]);
+
         }
     }
     return newFilteredArr;
