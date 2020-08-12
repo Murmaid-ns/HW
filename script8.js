@@ -51,17 +51,16 @@ const maxAge = users.reduce((prevAge, curAge) => {
 console.log('1.Самый старший пользователь', maxAge);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//todo: Переделать return
+
 const sortedUsers = users.sort((prevUser, curUser) => {
-    return (prevUser.name > curUser.name) - (prevUser.name < curUser.name) || (prevUser.age < curUser.age) - (prevUser.age > curUser.age);
+    if (prevUser.name === curUser.name) {
+        return (prevUser.name > curUser.name) - (prevUser.name < curUser.name)
+    } else {
+       return (prevUser.age < curUser.age) - (prevUser.age > curUser.age);
+    }
 });
 console.log('2. Сортировка по имени и возрасту', sortedUsers);
 
-// if (prevUser.name == curUser.name) {
-//     return prevUser.age > curUser.age;
-// } else {
-//     return prevUser.name > curUser.age;
-// }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
