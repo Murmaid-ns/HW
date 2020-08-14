@@ -21,7 +21,7 @@ function filter(arr2, funcFilter) {
     const newFilteredArr = [];
     for (let i = 0; i < arr2.length; i++) {
         const isTrueEl = funcFilter(arr2[i], i)
-        if(isTrueEl){
+        if (isTrueEl) {
             newFilteredArr.push(arr[i]);
 
         }
@@ -40,27 +40,14 @@ console.log('Новый массив числел без null', newFilteredArr);
 
 const arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-function reduce(arr3, initialValue) {
+function reduce(arr3, callback, initialValue) {
+    let result = initialValue;
     for (let i = 0; i < arr3.length; i++) {
-        initialValue = arr3[i] + initialValue;
-
-
+        result = callback(result, arr3[i], i);
     }
-    return initialValue;
+    return result;
 }
 
-const sum = reduce(arr3, 0)
+const sum = reduce(arr3, (prevIterationValue, el) => prevIterationValue + el, 0)
 console.log(sum, ' Сумма чисел массива ', arr3);
-
-
-//TODO: доделать адекватный вывод
-// Закоментировал так как не работал вывод через return.
-// Находилось в цикле for{  func(initialValue, i);  }
-// const sum = reduce(arr3, 0, (value, index) => {
-//     for (let j = 0; j <= index; j++) {
-//         value = arr3[j] + value;
-//     }
-//     console.log('value',value);
-//     return value;
-// });
 

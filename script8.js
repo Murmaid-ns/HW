@@ -16,17 +16,15 @@ console.log('2.Массив развернутый в обратном поря�
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-const dividedByTwoArr = arr.map(element => {
-    element = element / 2;
-    return element;
-});
+const dividedByTwoArr = arr.map(element => element / 2);
 console.log('3.Массив из элементов деленных на 2', dividedByTwoArr);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const sumOfNegativeNumber = arr.reduce((sum, element) => {
-    if (element % 2)
+    if (element % 2) {
         sum = sum + element
+    }
     return sum
 }, 0);
 console.log('4.Сумма нечётных чисел', sumOfNegativeNumber);
@@ -54,19 +52,19 @@ console.log('1.Самый старший пользователь', maxAge);
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+users.push({name: 'John', age: 70})
 
-const sortedUsers = users.sort((prevUser, curUser) => {
-    return prevUser.name.localeCompare(curUser.name) || (prevUser.age < curUser.age) - (prevUser.age > curUser.age);
+users.sort((prevUser, curUser) => {
+    return prevUser.name.localeCompare(curUser.name);
 });
-console.log('2. Сортировка по имени и возрасту', sortedUsers);
 
+console.log('2. Сортировка по имени и возрасту', users);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-let meanArithmeticAge = users.reduce((sum, curAge) => {
-    return sum + curAge.age;
-}, 0);
-meanArithmeticAge = meanArithmeticAge / users.length
+let sumOfUsersAge = users.reduce((sum, curAge) => sum + curAge.age, 0);
+let meanArithmeticAge = sumOfUsersAge / users.length;
+
 console.log('3. Средней возвраст пользователей', meanArithmeticAge);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
