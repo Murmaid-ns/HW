@@ -22,17 +22,14 @@ function filter(arr2, funcFilter) {
     for (let i = 0; i < arr2.length; i++) {
         const isTrueEl = funcFilter(arr2[i], i)
         if (isTrueEl) {
-            newFilteredArr.push(arr[i]);
-
+            newFilteredArr.push(arr2[i]);
         }
     }
     return newFilteredArr;
-
 }
 
 
-const newFilteredArr = filter(arr2, (el) => el !== null);
-console.log(arr2);
+const newFilteredArr = filter(arr2, (el) => el !== null && el !== undefined && el !== false);
 console.log('изначальный массив', arr2);
 console.log('Новый массив числел без null', newFilteredArr);
 
