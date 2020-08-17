@@ -43,6 +43,9 @@ const users = [
 ];
 
 users.push({name: 'Boris', age: 30});
+users.push({name: 'Valera', age: 48});
+users.push({name: 'John', age: 70});
+
 console.log('Пользователи', users);
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const maxAge = users.reduce((prevAge, curAge) => {
@@ -52,11 +55,10 @@ console.log('1.Самый старший пользователь', maxAge);
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-users.push({name: 'John', age: 70})
-
 users.sort((prevUser, curUser) => {
     const nameCompare = prevUser.name.localeCompare(curUser.name);
-    const ageCompare = (prevUser.age < curUser.age) - (prevUser.age > curUser.age);
+    // const ageCompare = (prevUser.age < curUser.age) - (prevUser.age > curUser.age);
+    const ageCompare = curUser.age - prevUser.age;
     return nameCompare || ageCompare;
 });
 
@@ -64,8 +66,8 @@ console.log('2. Сортировка по имени и возрасту', users
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-let sumOfUsersAge = users.reduce((sum, curAge) => sum + curAge.age, 0);
-let meanArithmeticAge = sumOfUsersAge / users.length;
+const sumOfUsersAge = users.reduce((sum, curAge) => sum + curAge.age, 0);
+const meanArithmeticAge = sumOfUsersAge / users.length;
 
 console.log('3. Средней возвраст пользователей', meanArithmeticAge);
 
