@@ -19,7 +19,6 @@ function genderCount() {
         const increaseField = user.gender;
         if (counter.hasOwnProperty(increaseField)) {
             counter[increaseField]++;
-
         } else {
             counter[increaseField] = 1;
         }
@@ -36,7 +35,7 @@ console.log('More is', genderCount(userInfo), 'gender');
 
 
 const arr = ['ololo', 'anna', 'red', 'ololo', 'qwe', 'anna', 'ololo'];
-const counterElements = arr.reduce((count, element, index) => {
+const counterElements = arr.reduce((count, element) => {
     if (count.hasOwnProperty(element)) {
         count[element]++;
     } else {
